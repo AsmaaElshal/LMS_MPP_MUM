@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="373.0" prefWidth="411.0" stylesheets="@AdminScreen.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane layoutY="14.0" prefHeight="353.0" prefWidth="416.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="213.0" minHeight="0.0" prefHeight="51.0" vgrow="SOMETIMES" /> 
+        </rowConstraints>
+         <children>
+            <Button id="btn" mnemonicParsing="false" prefHeight="26.0" prefWidth="101.0" text="Add Book">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin></Button>
+            <Button id="btn" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="Add Book Copy" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin></Button>
+            <Button id="btn" mnemonicParsing="false" prefHeight="29.0" prefWidth="134.0" text="Add Member" GridPane.columnIndex="1" />
+            <Button id="btn" mnemonicParsing="false" prefHeight="29.0" prefWidth="136.0" text="View Member" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button id="btn" mnemonicParsing="false" prefHeight="30.0" prefWidth="139.0" text="Edit Member" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button id="btn" mnemonicParsing="false" prefHeight="26.0" prefWidth="101.0" text="View Books" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Button>
+            <Button id="btn" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="Add Authors" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
