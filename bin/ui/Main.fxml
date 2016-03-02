@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox prefHeight="650.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="business.MainController">
+  <children>
+    <MenuBar BorderPane.alignment="CENTER" VBox.vgrow="NEVER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Librarian">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Checkout Book" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Administrator">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Add New Library Member" />
+            </items>
+            <items>
+              <MenuItem mnemonicParsing="false" text="Add Book Copy" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="System">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+    <AnchorPane fx:id="viewHolder" VBox.vgrow="ALWAYS" />
+  </children>
+</VBox>
+
