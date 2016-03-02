@@ -16,6 +16,7 @@ import dataaccess.storage.Role;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
@@ -25,9 +26,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Screen;
-import javafx.stage.Stage;
-import ui.ScreenManager;
-import ui.ScreenManager;
+import javafx.stage.Stage; 
 
 
 public class loginController {
@@ -43,7 +42,6 @@ public class loginController {
 	 Label statusLabel ;  
 
 	String librarian = "Librarian" ; 
- 
 
 	Stage stage;
 	Parent root;
@@ -65,37 +63,36 @@ public class loginController {
 				   System.out.println(lib.userName );
 				   
 				   if ((lib.userName).equals(userName)  &&  (lib.password).equals(password))
-				   {
-					   System.out.println("Loginggggggggggggggg");	
+				    
+					    
 				   		for (  Role role: lib.getRoles())
 				   			if(role instanceof LibrarianRole)
 				   			{
 				   				statusLabel.setText("Welcome you as Librarian");
-				   				goToNextScene(ScreenManager.LibrarianView);
+				   				goToNextScene(  Resource.AdminView);
 				   			}
 				   			else if(role instanceof AdministratorRole)
 				   			{
-				   				statusLabel.setText("Welcome you as Admin");
-				   				goToNextScene(ScreenManager.AdminView);
-				   			}
+				   				statusLabel.setText("Welcome you as Admin");				   			    
+					   			 goToNextScene(  Resource.AdminView);
+				   			 }
 				   				
-				   	} 
+				   	 
 				  }
 		}
 		
 		 
 	}
-	
-		void goToNextScene(  String screen) throws Exception 
-		{
-	   /* 	stage = (Stage) btnLogin.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getResource(screen));
-	    	Scene scene = new Scene(root);
-	    	stage.setScene(scene);
-	    	stage.show();*/
-			ViewController.loadView(screen);
-		}
-	
-	
+	void goToNextScene(  String screen) throws Exception 
+	{
+    	stage = (Stage) btnLogin.getScene().getWindow();
+		root = FXMLLoader.load(getClass().getResource(screen));
+    	Scene scene = new Scene(root);
+    	stage.setScene(scene);
+    	stage.show();
+    	 
+    	        
+	}
+	 
 
 }

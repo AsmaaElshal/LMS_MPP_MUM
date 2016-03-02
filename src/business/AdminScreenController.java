@@ -20,5 +20,11 @@ public class AdminScreenController {
 		
 		  ViewController.loadView(Resource.AddMember);
 	}
+	@FXML
+	void signingOut()
+	{
+		
+		  ViewController.loadView(Resource.Login);
+	}
 
 }
