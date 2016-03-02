@@ -22,7 +22,7 @@ public class Resource implements Serializable {
 	public static final String CheckOutRecordHistoryView="/ui/CheckOutHistory.fxml";
 	
 	
-	public static String CSS = "/ui/application.css";
+	public static String CSS = "/ui/Style.css";
 	public static String AppIcon = "/resource/appIcon.png";
 	
 

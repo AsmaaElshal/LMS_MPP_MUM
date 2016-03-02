@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="373.0" prefWidth="411.0" stylesheets="@AdminScreen.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="373.0" prefWidth="411.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="business.AdminScreenController">
    <children>
       <GridPane layoutY="14.0" prefHeight="353.0" prefWidth="416.0">
         <columnConstraints>
@@ -29,7 +29,7 @@
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin></Button>
-            <Button id="btn" mnemonicParsing="false" prefHeight="29.0" prefWidth="134.0" text="Add Member" GridPane.columnIndex="1" />
+            <Button id="btn" mnemonicParsing="false" onAction="#addingMember" prefHeight="29.0" prefWidth="134.0" text="Add Member" GridPane.columnIndex="1" />
             <Button id="btn" mnemonicParsing="false" prefHeight="29.0" prefWidth="136.0" text="View Member" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Button id="btn" mnemonicParsing="false" prefHeight="30.0" prefWidth="139.0" text="Edit Member" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button id="btn" mnemonicParsing="false" prefHeight="26.0" prefWidth="101.0" text="View Books" GridPane.rowIndex="1">

@@ -7,12 +7,18 @@ public class AdminScreenController {
 	@FXML
 	Button addBookBtn ; 
 	
-	
+
 	@FXML
 	void addingBook()
 	{
 		
 		
+	}
+	@FXML
+	void addingMember()
+	{
+		
+		  ViewController.loadView(Resource.AddMember);
 	}
 
 }
