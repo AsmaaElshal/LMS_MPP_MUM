@@ -1,6 +1,6 @@
 package business;
 
-import java.time.LocalDate;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -10,7 +10,6 @@ import dataaccess.storage.BookCopy;
 import dataaccess.storage.CheckoutEntry;
 import dataaccess.storage.CheckoutRecord;
 import dataaccess.storage.LibraryMember;
-import dataaccess.DataAccess;
 import dataaccess.DataAccessSingleton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,7 +19,7 @@ import javafx.scene.text.Text;
 
 
 public class CheckoutRecordController {
-	DataAccess dataAccess=DataAccessSingleton.getDataAccess();
+//	DataAccess dataAccess=DataAccessSingleton.getDataAccess();
 	@FXML
 	TextField memberId;
 	@FXML
@@ -42,21 +41,30 @@ public class CheckoutRecordController {
 		boolean bookCopyFound=false;
 		boolean libraryMemberFound=false;
 		
-		//Book book=null;
-		List<BookCopy> copies=null;
-		
-		copies=dataAccess.getAvailableBookCopy(isbn);
-		LibraryMember libraryMember=null;
-		libraryMember=getLibraryMemberById(id);
-		
-		if(copies!=null)
+		//BookCopies from isbn
+		if(isbn==null)
 		{
-			bookCopyFound=true;
+			System.out.println("Please Enter ISBN");
+			return;
+			//actiontarget.setText("ISBC");
+			/*Alert alert = new Alert(AlertType.INFORMATION);
+	    	alert.setTitle("Information Dialog");
+	    	alert.setHeaderText("Fail");
+	    	alert.setContentText(" Book Not Available !");
+	    	alert.showAndWait();
+	    	return;*/
 		}
-		else
+		Book book = DataAccessSingleton.getDataAccess().getBooks().get(isbn);
+		
+		 List<BookCopy> copies = book.getBookCopies();
+		//LibraryMember from id
+		LibraryMember libraryMember = DataAccessSingleton.getDataAccess().getMembers().get(id);
+		
+		if(copies == null)
 		{
 			
 			System.out.println("Book Not Available");
+			return;
 			//actiontarget.setText("Book is not available");
 			/*Alert alert = new Alert(AlertType.INFORMATION);
 	    	alert.setTitle("Information Dialog");
@@ -66,13 +74,10 @@ public class CheckoutRecordController {
 	    	return;*/
 		}
 		
-		if(libraryMember!=null)
-		{
-			libraryMemberFound=true;
-		}
-		else
+		if(libraryMember == null)
 		{
 			System.out.println("Member Not Found !");
+			return;
 			/*Alert alert = new Alert(AlertType.INFORMATION);
 	    	alert.setTitle("Information Dialog");
 	    	alert.setHeaderText("Fail");
@@ -81,8 +86,6 @@ public class CheckoutRecordController {
 	    	return;*/
 		}
 		
-		if(bookCopyFound && libraryMemberFound)
-		{
 			CheckoutRecord checkoutRecord=libraryMember.getCheckoutRecord();
 			
 			if(checkoutRecord==null)
@@ -122,30 +125,12 @@ public class CheckoutRecordController {
 	    	alert.setContentText(" Book Checkout successful !");
 	    	alert.showAndWait();*/
 			
-		}
-	}
-	
-	public LibraryMember getLibraryMemberById(String id) {
-		// TODO Auto-generated method stub
-		LibraryMember libraryMember=null;
-	//	HashMap<Integer, LibraryMember> libraryMembers=getLibraryMember();
-		for(LibraryMember member:DataAccessSingleton.getDataAccess().getLibraryMember().values()){
-			if(member.getMemberId().equals(id)){
-				libraryMember = member;
-			}
-		}
 		
-	//	libraryMember=libraryMembers.get(id);
-		
-		return libraryMember;
 	}
 
-	
 	@FXML
-	
-	void goBack(ActionEvent event)
-	{
-		
+	void goBack(ActionEvent event) throws IOException {
+		ViewController.loadView(Resource.LibrarianView);
 	}
 
 }

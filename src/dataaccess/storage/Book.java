@@ -17,6 +17,7 @@ public class Book implements Serializable {
 		this.ISBN = isbn;
 		this.title = title;
 		this.maxCheckoutLength = maxCheckoutLength;
+		bookCopies = new ArrayList<>();
 		authors = new ArrayList<>();
 		authors.add(author);
 	}
@@ -70,6 +71,7 @@ public class Book implements Serializable {
         BookCopy[] arr = new BookCopy[n];
         for (int i = 0; i < n; i++) {
             arr[i] = new BookCopy();
+            bookCopies.add(arr[i]);
         }
         return arr;
     }
