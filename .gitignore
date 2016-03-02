@@ -1,0 +1,7 @@
+build/
+out/
+classes
+bin/
+bin/**
+*.class
+*.jar
