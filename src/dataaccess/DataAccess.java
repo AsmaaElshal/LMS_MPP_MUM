@@ -23,5 +23,5 @@ public interface DataAccess {
     
     
 	public Hashtable<String,LibraryMember> getLibraryMember();
-	public List<BookCopy> getAvailableBookCopy(String isbn);
+//	public List<BookCopy> getAvailableBookCopy(String isbn);
 }

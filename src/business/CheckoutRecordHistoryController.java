@@ -32,14 +32,14 @@ import javafx.beans.value.ObservableValue;
 
 public class CheckoutRecordHistoryController/* implements Initializable */{
 		
-	DataAccess access=DataAccessSingleton.getDataAccess();
+	//DataAccess access=DataAccessSingleton.getDataAccess();
 
 
 	@FXML
 	TableView<CheckoutEntry> tableViewHistory;
 	
 	@FXML
-	TableColumn<BookCopy,String> copyNum;
+	TableColumn<CheckoutEntry,String> copyNum;
 	
 	@FXML
 	TableColumn<CheckoutEntry,String> issueDate;
@@ -48,9 +48,28 @@ public class CheckoutRecordHistoryController/* implements Initializable */{
 	TableColumn<CheckoutEntry,String> dueDate;
 	
 	@FXML
-	Button btngoBack;
+	Button btnGoBack;
+	
+/*	@FXML
+    void goBack(ActionEvent event) throws IOException {
+    	
+    	Stage stage = (Stage) btnGoBack.getScene().getWindow();
+		Parent root = FXMLLoader.load(getClass().getResource(Resource.LibrarianView));
+		Scene scene = new Scene(root);
+    	stage.setScene(scene);
+    	stage.show();
+
+    }*/
+
+	@FXML
+	void goBack(ActionEvent event) throws IOException {
+		System.out.println("Hello");
+		ViewController.loadView(Resource.LibrarianView);
+	}
+	
 
 	public void initialize(String memberId) {
+		DataAccess access=DataAccessSingleton.getDataAccess();
 		System.out.println("Inside initialize");
 		// TODO Auto-generated method stub
 	///	String memberId=
@@ -68,48 +87,14 @@ public class CheckoutRecordHistoryController/* implements Initializable */{
 		}
 		
 		tableViewHistory.setItems(datas);
-		
-		copyNum.setCellValueFactory(new Callback<CellDataFeatures<BookCopy, String>, ObservableValue<String>>() {
-	   	     public ObservableValue<String> call(CellDataFeatures<BookCopy, String> p) {
-	   	         String rState = p.getValue().getId().toString();
-	   	         return new SimpleStringProperty(rState);
-	   	  }
-	   	  });
-		
-		issueDate.setCellValueFactory(new PropertyValueFactory<CheckoutEntry,String>("checkoutDate"));
-		dueDate.setCellValueFactory(new PropertyValueFactory<CheckoutEntry,String>("dueDate"));
-		
-		
-	}
+		copyNum.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getBookCopy().getId().toString()));
+		issueDate.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCheckoutDate().toString()));
+		issueDate.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDueDate().toString()));
 		
 		
 		
-		
-		/*copyNum.setCellValueFactory(new Callback<CellDataFeatures<BookCopy, String>, ObservableValue<String>>() {
-	   	     public ObservableValue<String> call(CellDataFeatures<BookCopy, String> p) {
-	   	         String rState = p.getValue().getId().toString();
-	   	         return new SimpleStringProperty(rState);
 	   	     }
-	   	  });
-		
-		issueDate.setCellValueFactory(new PropertyValueFactory<CheckoutEntry,String>("checkoutDate"));
-		dueDate.setCellValueFactory(new PropertyValueFactory<CheckoutEntry,String>("dueDate"));*/
-		
-		//copyNum.setCellValueFactory(value);
 	
-	
-	
-	
-	@FXML
-    void goBack(ActionEvent event) throws IOException {
-    	
-    	Stage stage = (Stage) btngoBack.getScene().getWindow();
-		Parent root = FXMLLoader.load(getClass().getResource(Resource.CheckOutRecordView));
-		Scene scene = new Scene(root);
-    	stage.setScene(scene);
-    	stage.show();
-
-    }
 	
 	
 	

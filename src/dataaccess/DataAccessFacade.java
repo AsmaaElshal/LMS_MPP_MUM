@@ -72,7 +72,7 @@ public class DataAccessFacade implements DataAccess, Serializable{
 		// TODO Auto-generated method stub
 		return members;
 	}
-
+/*
 	@Override
 	public List<BookCopy> getAvailableBookCopy(String isbn) {
 		// TODO Auto-generated method stub
@@ -85,7 +85,7 @@ public class DataAccessFacade implements DataAccess, Serializable{
 		}
 		
 		return copies;
-	}
+	}*/
 
 	
 	

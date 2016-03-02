@@ -3,6 +3,7 @@ package business;
 import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 
 public class ViewController {
 	
@@ -25,4 +26,9 @@ public class ViewController {
             e.printStackTrace();
         }
     }
+	 
+	 public static void loadView(Node node) {
+		 mainController.setView(node);
+	 }
+	 
 }

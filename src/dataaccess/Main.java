@@ -20,6 +20,9 @@ public class Main {
 		}
 		for(Book book:DataAccessSingleton.getDataAccess().getBooks().values()){
 			System.out.println(book.getISBN() + " " + book.getTitle());
+			for(BookCopy copy : book.getBookCopies()){
+				System.out.println(copy.getId());
+			}
 		}
 	}
 			
