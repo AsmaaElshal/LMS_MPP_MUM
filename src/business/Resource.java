@@ -8,9 +8,11 @@ public class Resource implements Serializable {
 	public static final String Login = "/ui/Login.fxml" ;
 	public static final String AdminView = "/ui/AdminScreen.fxml";
 	public static final String LibrarianView = "/ui/LibrarianScreen.fxml";
-	
+
 	//Add Member
 	public static final String AddMember = "/ui/AddMember.fxml";
+	//Add Book
+	public static final String AddBook = "/ui/AddBook.fxml";
 	
 	public static String Main = "/ui/Main.fxml";
 	public static String Home = "/ui/Home.fxml";

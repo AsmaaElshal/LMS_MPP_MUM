@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class AdminScreenController {
+	@FXML 
+	Button btnAddBook ; 
 	@FXML
 	Button addBookBtn ; 
 	
@@ -12,7 +14,7 @@ public class AdminScreenController {
 	void addingBook()
 	{
 		
-		
+		 ViewController.loadView(Resource.AddBook);	
 	}
 	@FXML
 	void addingMember()

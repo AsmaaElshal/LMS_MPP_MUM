@@ -45,6 +45,7 @@ public class loginController {
 
 	Stage stage;
 	Parent root;
+	
 	@FXML
 	void Login(ActionEvent event) throws Exception 
 	{
@@ -69,14 +70,15 @@ public class loginController {
 				   			if(role instanceof LibrarianRole)
 				   			{
 				   				statusLabel.setText("Welcome you as Librarian");
-				   				goToNextScene(  Resource.AdminView);
+
+				   		        ViewController.loadView(Resource.LibrarianView);
 				   			}
 				   			else if(role instanceof AdministratorRole)
 				   			{
 				   				statusLabel.setText("Welcome you as Admin");				   			    
-					   			 goToNextScene(  Resource.AdminView);
-				   			 }
-				   				
+
+				   		        ViewController.loadView(Resource.AdminView);
+				   			 }	
 				   	 
 				  }
 		}

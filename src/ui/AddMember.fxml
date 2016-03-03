@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="307.0" prefWidth="244.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="business.AddMemberController">
    <children>
-      <GridPane alignment="CENTER" layoutX="14.0" layoutY="27.0" prefHeight="280.0" prefWidth="345.0">
+      <GridPane id ="gridPane" alignment="CENTER" layoutX="14.0" layoutY="27.0" prefHeight="280.0" prefWidth="345.0" style="" stylesheets="@Style.css">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="89.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="10.0" prefWidth="202.0" />
@@ -69,7 +69,7 @@
                   <Insets left="20.0" />
                </padding>
             </Label>
-            <Button mnemonicParsing="false" onAction="#AddMemeber" text="Add Member" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Button mnemonicParsing="false" id="btn" onAction="#AddMemeber" text="Add Member" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             <TextField fx:id="memberIDField" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets right="10.0" />
